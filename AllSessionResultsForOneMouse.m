@@ -1,5 +1,5 @@
 
-%% Index
+%% Index representation
 
 % lick                  0;
 % Automaticfeeding      94;
