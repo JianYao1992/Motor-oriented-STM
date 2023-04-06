@@ -4,14 +4,12 @@ clear; clc; close all;
 
 %% Load files
 % control group
-[C_Filename Pathway] = uigetfile({'*.mat','Matlab files(*.mat)';},...
-    'Pick some file','MultiSelect','on');
+[C_Filename Pathway] = uigetfile({'*.mat','Matlab files(*.mat)';},'Pick some file','MultiSelect','on');
 for iSess = 1:size(C_Filename,2)
     C_Dataofmice{iSess} = load(C_Filename{1,iSess});
 end
 % experimental group
-[E_Filename Pathway] = uigetfile({'*.mat','Matlab files(*.mat)';},...
-    'Pick some file','MultiSelect','on');
+[E_Filename Pathway] = uigetfile({'*.mat','Matlab files(*.mat)';},'Pick some file','MultiSelect','on');
 for iSess = 1:size(E_Filename,2)
     E_Dataofmice{iSess} = load(E_Filename{1,iSess});
 end
