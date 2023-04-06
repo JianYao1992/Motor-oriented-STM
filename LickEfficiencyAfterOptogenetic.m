@@ -27,8 +27,7 @@ Learningday = 6; WellTrainedDay = 2; BeforeTrial = 2; SampleDuration = 1; DelayD
 LearningOrWellTrain = 1; % learning:1; well-trained:2
 RespWindow = [BeforeTrial + SampleDuration + DelayDuration + RespOdorDuration BeforeTrial + SampleDuration + DelayDuration + RespOdorDuration + 0.4];
 
-%% Lick number in the response window
-
+%% Lick number in the response
 if LearningOrWellTrain == 1 % learning phase
     C_LickNuminWindow = cell(1,Learningday);
     for iSess = 1:Learningday  % session
