@@ -131,7 +131,7 @@ xlabel('Training Day','FontSize',18,'FontName','Arial');
 ylabel('Correct Rate ( % )','FontSize',18,'FontName','Arial');
 box off;
 set(gcf, 'Renderer', 'Painter'); saveas(gcf,['Correct Rate-' Mani],'fig'); close;
-pValue = GetDataMatrixForMixedRepeatedAnova(C_Perf, E_Perf);
+pValue = GetDataMatrixForMixedRepeatedAnova(C_Perf, E_Perf, Mani);
 p_perf = pValue{1,1};
 
 %% Plot session-based hit and CR rate
@@ -156,7 +156,7 @@ E_MeanCRRate = cellfun(@mean, E_CRRate);
 E_StdCRRate = cellfun(@std,E_CRRate);
 [nrows,ncols] = cellfun(@size,E_CRRate);
 errorbar(1:LearningDay,E_MeanCRRate,E_StdCRRate./sqrt(nrows),'color',C2,'LineWidth',2,'marker','o','markerfacecolor',C2,'markeredgecolor','none','markersize',10);
-pValue = GetDataMatrixForMixedRepeatedAnova(C_CRRate, E_CRRate);
+pValue = GetDataMatrixForMixedRepeatedAnova(C_CRRate, E_CRRate, Mani);
 p_CRRate = pValue{1,1};
 legend(['Vgat-ChR2 -, n = ' num2str(size(C_Dataofmice,2))],['Vgat-ChR2 +, n = ' num2str(size(E_Dataofmice,2))],'Location','southeast');
 legend('boxoff');
@@ -187,10 +187,10 @@ ylabel('Performance ( d )','FontSize',18,'FontName','Arial');
 box off;
 set(gcf, 'Renderer', 'Painter'); saveas(gcf,['dprime-' Mani],'fig');
 close;
-pValue = GetDataMatrixForMixedRepeatedAnova(C_dprime, E_dprime);
+pValue = GetDataMatrixForMixedRepeatedAnova(C_dprime, E_dprime, Mani);
 p_dprime = pValue{1,1};
 
-%% Plot Day-based delay lick ratios for control and experimental group mice.
+%% Plot session-based delay lick ratios for control and experimental group mice.
 figure('OuterPosition',[219 103 750 600]);
 C_MeanEarlyLickRatio = cellfun(@mean, C_EarlyLickRatio);
 C_StdEarlyLickRatio = cellfun(@std,C_EarlyLickRatio);
@@ -208,7 +208,7 @@ set(gca,'YTick',0:0.2:1,'YTickLabel',{'0','20','40','60','80','100'},'FontName',
 xlabel('Training Day','FontSize',18,'FontName','Arial');
 ylabel('Proportion of abortion ( % )','FontSize',18,'FontName','Arial');
 box off;
-pValue = GetDataMatrixForMixedRepeatedAnova(C_EarlyLickRatio, E_EarlyLickRatio);
+pValue = GetDataMatrixForMixedRepeatedAnova(C_EarlyLickRatio, E_EarlyLickRatio, Mani);
 p_AbortionRatio = pValue{1,1};
 title(sprintf('p=%d',p_AbortionRatio));
 set(gcf, 'Renderer', 'Painter');
