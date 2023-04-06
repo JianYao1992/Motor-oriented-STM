@@ -33,7 +33,7 @@ C_Perf = cell(1,LearningDay); C_HitRate = cell(1,LearningDay); C_CRRate = cell(1
 C_LickPSTH_Go = cell(1,LearningDay); C_LickPSTH_NoGo = cell(1,LearningDay);
 C_LickRasterinTrial = cell(1,LearningDay); C_DRTTrialMarker = cell(1,LearningDay); C_dprime = cell(1,LearningDay);
 for iDay = 1:LearningDay  % session
-    for j = 1:size(C_Dataofmice,2) % mice
+    for j = 1:size(C_Dataofmice,2) 
         if iDay <= size(C_Dataofmice{1,j}.HitRate,2) % task days
             C_Perf{iDay} = [C_Perf{iDay}; C_Dataofmice{1,j}.Perf(iDay)];
             C_HitRate{iDay} = [C_HitRate{iDay}; C_Dataofmice{1,j}.HitRate(iDay)];
