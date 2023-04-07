@@ -120,7 +120,7 @@ for iTrialtype = 1:2
         plot(time/TimeGain,smooth(mean(E_LickPSTH{iTargetDay},1),3)','color',C2,'linewidth',3);
         maxlickrate = 1.5*max(horzcat(smooth(mean(C_LickPSTH{iTargetDay},1),3)',smooth(mean(E_LickPSTH{iTargetDay},1),3)'));
         % cluster-based permuatation test
-        [SigTime_Real, SigTimebelowChance_Real] = ClusterBasedPermutationForTwoGroupsData(C_LickPSTH{iTargetDay},E_LickPSTH{iTargetDay});
+        [SigTime_Real, SigTimebelowChance_Real] = ClusterBasedPermutation_ForBothReal(C_LickPSTH{iTargetDay},E_LickPSTH{iTargetDay});
         if ~isempty(SigTime_Real)
             for i=1:length(SigTime_Real)
                 patch([SigTime_Real(i) SigTime_Real(i) SigTime_Real(i)+1 SigTime_Real(i)+1]./TimeGain,[maxlickrate-0.1 maxlickrate maxlickrate maxlickrate-0.1],C1,'edgecolor','none');
