@@ -85,7 +85,7 @@ for iUnit = 1:length(TarUnitsID)
         tempEventPeriod = (iSecBin-1)*TimeGain + 1:iSecBin*TimeGain;
         AverFR_S1 = mean(TargetBrainUnitsFRinS1{TarUnitsID(iUnit)}(:,tempEventPeriod),2);
         AverFR_S2 = mean(TargetBrainUnitsFRinS2{TarUnitsID(iUnit)}(:,tempEventPeriod),2);
-        if IsDVorFRROC==1
+        if IsDVorFRROC == 1
             % step 2: DV of S1 and S2 trials
             [DV_S1,DV_S2] = DecisionVariableCalculation(AverFR_S1,AverFR_S2);
             % step 3: TPR and FPR
