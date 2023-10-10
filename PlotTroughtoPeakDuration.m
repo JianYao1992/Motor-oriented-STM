@@ -42,5 +42,5 @@ end
 % xlabel('Peak-to-valley time (ms)');  ylabel('Firing rate (Hz)'); 
 % box off;
 % set(gcf,'Renderer','Painter'); saveas(gcf,[BrainRegion 'PeaktoValleyDurationandbaselineFiringRate'],'fig'); close;
-save(['Putative' BrainRegion 'PCandFSIID'],'PCID','FSIID','PCDuration','FSIDuration','PCFiring','FSIFiring','BrainRegionUnitsPeakTroughDuration');
+save(['Putative' BrainRegion 'PCandFSIID'],'PCID','FSIID','PCDuration','FSIDuration','PCFiring','FSIFiring','BrainRegionUnitsPeakTroughDuration','-v7.3');
 
